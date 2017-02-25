@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" schema="dbo"
+               assembly="UnitOfWork.Domain"
+               namespace="UnitOfWork.Domain.Entities">
+
+  <class name="Product" table="Product" lazy="false">
+   
+
+    <sql-insert xml:space="preserve">
+      DECLARE @my_id  bigint
+      EXECUTE dbo.InsertMyEntity @name = ?, @comment = ?, @my_id = @my_id OUT
+      SELECT  @my_id
+    </sql-insert>
+    <sql-update xml:space="preserve">
+      EXECUTE dbo.UpdateMyEntity @name = ?, @comment = ?, @my_id = ?
+    </sql-update>
+    <sql-delete xml:space="preserve">
+      EXECUTE dbo.DeleteMyEntity @my_id = ?
+    </sql-delete>
+    <sql-select xml:space="preserve">
+      execute dbo.GetAllProducts
+    </sql-select>
+  </class>
+</hibernate-mapping>
