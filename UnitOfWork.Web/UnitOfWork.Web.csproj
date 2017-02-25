@@ -148,7 +148,7 @@
     </ProjectReference>
     <ProjectReference Include="..\UnitOfWork.Domain\UnitOfWork.Domain.csproj">
       <Project>{7e905b6f-e293-4ece-8bc3-99404fcab5c3}</Project>
-      <Name>UnitOfWorkExample.Domain</Name>
+      <Name>UnitOfWork.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

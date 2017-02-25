@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork.Web", "UnitOfWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork.WebApi", "UnitOfWork.WebApi\UnitOfWork.WebApi.csproj", "{E3060534-FC7D-4038-A6A4-A6E19332FE54}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{ADDE5734-8898-4932-9592-22E18CA4B248}"
+	ProjectSection(SolutionItems) = preProject
+		UnitOfWorkExample.mdf = UnitOfWorkExample.mdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
