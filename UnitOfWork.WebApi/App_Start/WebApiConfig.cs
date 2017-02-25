@@ -27,6 +27,8 @@ namespace UnitOfWork.WebApi
             //return json instead of xml
             config.Formatters.JsonFormatter.SupportedMediaTypes
                 .Add(new MediaTypeHeaderValue("text/html"));
+
+            config.Formatters.Add(new PlainTextMediaTypeFormatter());
         }
     }
 }

@@ -22,7 +22,7 @@ namespace UnitOfWork.Domain.Services
         /// Get full list of products
         /// </summary>
         /// <returns></returns>
-        IList<Product> SqlQueryList();
+        IList<Product> GetAllProducts();
 
 
         /// <summary>
@@ -30,7 +30,9 @@ namespace UnitOfWork.Domain.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Product SqlQuery(int id);
+        Product GetProductById(int id);
+
+        Product CreateProduct(string name);
     }
 
     public class ProductService : IProductService
@@ -71,12 +73,17 @@ namespace UnitOfWork.Domain.Services
             _productRepository.Delete(id);
         }
 
-        public Product SqlQuery(int id)
+        public Product GetProductById(int id)
         {
             return _productRepository.SqlQuery<Product>("exec dbo.GetProductById " + id);
         }
 
-        public IList<Product> SqlQueryList()
+        public Product CreateProduct(string name)
+        {
+            return _productRepository.SqlQuery<Product>("exec dbo.CreateProduct " + name);
+        }
+
+        public IList<Product> GetAllProducts()
         {
             return _productRepository.SqlQueryList<Product>("exec dbo.GetAllProducts");
 

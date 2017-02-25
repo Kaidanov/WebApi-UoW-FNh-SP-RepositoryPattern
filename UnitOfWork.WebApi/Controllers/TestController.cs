@@ -23,18 +23,20 @@ namespace UnitOfWork.WebApi.Controllers
         // GET: api/Test
         public IEnumerable<Product> Get()
         {
-            return _productService.SqlQueryList();
+            return _productService.GetAllProducts();
         }
 
         // GET: api/Test/5
         public Product Get(int id)
         {
-            return _productService.SqlQuery(id);
+            return _productService.GetProductById(id);
         }
 
         // POST: api/Test
-        public void Post([FromBody]string value)
+        public Product Post([FromBody]string value)
         {
+            return _productService.CreateProduct(value);
+
         }
 
         // PUT: api/Test/5

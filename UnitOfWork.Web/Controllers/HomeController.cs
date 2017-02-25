@@ -22,7 +22,7 @@ namespace UnitOfWork.Web.Controllers
         public ActionResult Index()
         {
             var viewModel = new IndexViewModel();
-            viewModel.Products = _productService.SqlQueryList();
+            viewModel.Products = _productService.GetAllProducts();
             // ensure there are products for the example
             if (!viewModel.Products.Any())
             {

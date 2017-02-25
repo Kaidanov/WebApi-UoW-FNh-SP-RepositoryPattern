@@ -23,14 +23,14 @@ namespace UnitOfWork.WebApi.Controllers
         public IHttpActionResult GetProducts()
         {
             // ensure there are products for the example
-            if (!_productService.SqlQueryList().Any())
+            if (!_productService.GetAllProducts().Any())
             {
                 _productService.Create(new Product { Name = "Product 1" });
                 _productService.Create(new Product { Name = "Product 2" });
                 _productService.Create(new Product { Name = "Product 3" });
             }
 
-            return Ok(_productService.SqlQueryList());
+            return Ok(_productService.GetAllProducts());
         }
     }
 }
